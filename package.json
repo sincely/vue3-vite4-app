@@ -38,6 +38,7 @@
     "@vitejs/plugin-vue": "4.2.3",
     "autoprefixer": "10.4.14",
     "commitizen": "4.3.0",
+    "cz-emoji-conventional": "^1.0.2",
     "cz-conventional-changelog": "3.3.0",
     "cz-customizable": "^6.9.2",
     "eslint": "8.45.0",
@@ -70,7 +71,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-emoji-conventional"
     }
   }
 }
