@@ -53,7 +53,7 @@
     "terser": "5.17.7",
     "unplugin-auto-import": "0.16.6",
     "unplugin-vue-components": "0.25.1",
-    "vite": "4.4.6",
+    "vite": "4.4.9",
     "vite-plugin-vue-devtools": "0.5.1",
     "vue-eslint-parser": "9.3.1"
   }
