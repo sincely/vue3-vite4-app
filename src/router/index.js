@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import layout from '@/layout/index.vue'
+import home from '@/views/home/index.vue'
 
 Vue.use(VueRouter)
 
@@ -10,8 +11,19 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      component: layout,
+      redirect: '/home',
+      children: [
+        {
+          path: '/home',
+          component: home,
+          name: 'home',
+          meta: {
+            title: '首页',
+            keepAlive: true
+          }
+        }
+      ]
     }
   ]
 })
