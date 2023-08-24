@@ -14,8 +14,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
-    "prepare": "husky install",
-    "commit": "cz"
+    "prepare": "husky install"
   },
   "dependencies": {
     "mockjs": "1.1.0",
@@ -36,8 +35,6 @@
     "@commitlint/cli": "17.6.5",
     "@commitlint/config-conventional": "17.6.5",
     "conventional-changelog-cli": "3.0.0",
-    "commitizen": "4.3.0",
-    "cz-conventional-changelog": "3.3.0",
     "@vitejs/plugin-legacy": "4.1.1",
     "@vitejs/plugin-vue": "4.2.3",
     "autoprefixer": "10.4.14",
@@ -68,10 +65,5 @@
     "vite": "4.4.9",
     "vite-plugin-vue-devtools": "0.5.1",
     "vue-eslint-parser": "9.3.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
