@@ -12,10 +12,6 @@
     "prettier:fix": "prettier --write \"src/**/*.{js,vue}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less}\" --fix",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "release": "standard-version",
-    "release-major": "standard-version --release-as major",
-    "release-minor": "standard-version --release-as minor",
-    "release-patch": "standard-version --release-as patch",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
     "prepare": "husky install"
@@ -66,7 +62,6 @@
     "terser": "5.17.7",
     "unplugin-auto-import": "0.16.6",
     "unplugin-vue-components": "0.25.1",
-    "standard-version": "^9.3.2",
     "vite": "4.4.9",
     "vite-plugin-vue-devtools": "0.5.1",
     "vue-eslint-parser": "9.3.1"
