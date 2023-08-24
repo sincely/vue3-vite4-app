@@ -1,7 +1,7 @@
 {
   "name": "vue3-vite4-app",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "serve": "npm run eslint:fix && npm run prettier:fix && npm run stylelint:fix && vite --mode development",
     "build:test": "vite build --mode test",
