@@ -1,17 +1,10 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "api/*": ["api/*"],
-      "components/*": ["src/components/*"],
-      "assets/*": ["src/assets/*"],
-      "views/*": ["src/views/*"],
-      "utils/*": ["src/utils/*"],
-      "directive/*": ["src/directive/*"],
-      "styles/*": ["src/styles/*"]
+      "@/*": ["src/*"]
     }
   },
+  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
