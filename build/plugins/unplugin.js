@@ -2,6 +2,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite' // 自动导入
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 export default function createVitePlugins() {
   return [
     Icons({ autoInstall: true, compiler: 'vue3' }),
@@ -23,8 +24,7 @@ export default function createVitePlugins() {
     }),
     Components({
       dirs: ['src/components'], // 指定组件位置，默认是src/components
-      // ui库解析器
-      resolvers: [IconsResolver()],
+      resolvers: [AntDesignVueResolver({ importStyle: 'less', resolveIcons: true }), IconsResolver()],
       extensions: ['vue'],
       // 配置文件生成位置
       dts: false // 会在根目录生成./components.d.ts，里面可以看到自动导入的api
