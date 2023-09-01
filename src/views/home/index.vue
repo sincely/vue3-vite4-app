@@ -1,5 +1,5 @@
 <template>
-  <div>111111111</div>
+  <div><HelloWorld msg="Vite + Vue" /></div>
 </template>
 
 <script></script>
