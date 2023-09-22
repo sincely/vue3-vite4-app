@@ -1,5 +1,7 @@
-<script setup></script>
-
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <div id="app">
+    <router-view />
+  </div>
 </template>
+
+<style scoped></style>

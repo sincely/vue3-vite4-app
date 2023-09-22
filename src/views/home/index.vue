@@ -1,7 +1,7 @@
 <template>
-  <div>111111111</div>
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<script></script>
+<script setup></script>
 
 <style lang="less" scoped></style>
