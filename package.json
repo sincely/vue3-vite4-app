@@ -68,7 +68,7 @@
     "unplugin-auto-import": "0.16.6",
     "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "0.25.1",
-    "vite": "4.4.9",
+    "vite": "4.4.11",
     "vite-plugin-vue-devtools": "0.5.1",
     "vue-eslint-parser": "9.3.1"
   }
