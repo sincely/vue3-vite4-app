@@ -69,7 +69,9 @@
     "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "0.25.1",
     "vite": "4.4.11",
+    "vite-plugin-restart": "0.3.1",
     "vite-plugin-vue-devtools": "0.5.1",
+    "vite-plugin-vue-images": "0.6.1",
     "vue-eslint-parser": "9.3.1"
   }
 }
