@@ -9,7 +9,7 @@ import commonjs from './require'
 import progress from './progress'
 import vueDevTools from './vueDevtool'
 import prefetchPlugin from './preload'
-import webUpdateNoticePlugin from './update'
+import webUpdateNoticePlugin from './updateVersion'
 import restartPlugin from './restart'
 import imagesPlugin from './images'
 /**
