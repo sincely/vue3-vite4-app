@@ -25,6 +25,15 @@ module.exports = defineConfig({
     'plugin:prettier/recommended',
     './.eslintrc-auto-import.json'
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']]
+      }
+    },
+    // 允许的扩展名
+    'import/extensions': ['.js', '.jsx', '.ts', 'tsx', '.mjs']
+  },
   rules: {
     'import/no-extraneous-dependencies': 0, // 禁止使用多余的包
     'import/extensions': 0, // 确保在导入路径内一致使用文件扩展名
