@@ -19,3 +19,5 @@ pnpm-lock.yaml
 dist
 
 node_modules
+/public/*
+components.d.ts
