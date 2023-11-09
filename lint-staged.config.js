@@ -3,5 +3,7 @@ module.exports = {
   // 我们可以使用lint-staged，它可以让我们执行检查命令只对git缓存区的文件有效。
   '*.{js,jsx,ts,tsx,vue}': ['eslint --fix', 'prettier --write'],
   'package.json': ['prettier --write'],
-  '*.{css,less}': ['stylelint:fix', 'prettier --write']
+  '*.{html}': ['prettier --write'],
+  '*.{css,less,}': ['stylelint:fix', 'prettier --write'],
+  '{!(package)*.json,.!(browserslist)*rc}': ['prettier --write--parser json']
 }
