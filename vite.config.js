@@ -22,7 +22,7 @@ export default defineConfig(({ mode, command }) => {
         }
       },
       emptyOutDir: true, // 默认true默认情况下，若outDir在root目录下，则Vite会在构建时清空该目录。
-      assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求。设置为0可以完全禁用此项
+      assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求。设置为0可以完全禁用此项
       outDir: 'dist', // 指定输出路径,默认dist
       reportCompressedSize: false, // 取消计算文件大小，加快打包速度
       sourcemap: true,
@@ -51,7 +51,7 @@ export default defineConfig(({ mode, command }) => {
     },
     resolve: {
       alias: {
-        '@': resolve(__dirname, './src'), // 这里是将src目录配置别名为@方便在项目中导入src目录下的文件
+        '@': resolve(__dirname, './src'),
         '@/styles': resolve(__dirname, 'src/styles'),
         '@/router': resolve(__dirname, 'src/router'),
         '@/views': resolve(__dirname, 'src/views'),

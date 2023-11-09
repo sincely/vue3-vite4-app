@@ -12,6 +12,7 @@ import prefetchPlugin from './preload'
 import webUpdateNoticePlugin from './updateVersion'
 import restartPlugin from './restart'
 import imagesPlugin from './images'
+import htmlPlugin from './html'
 /**
  * @description  创建vite插件
  * @param viteEnv - 环境变量配置
@@ -20,7 +21,7 @@ import imagesPlugin from './images'
 export default function createVitePlugins(viteEnv, isBuild = false) {
   const vitePlugins = [vue(), mock(viteEnv), ...unplugin(), commonjs(), restartPlugin(), imagesPlugin()]
   if (isBuild) {
-    vitePlugins.push(compression(), visualizer(), legacy(), progress(), webUpdateNoticePlugin())
+    vitePlugins.push(compression(), visualizer(), legacy(), progress(), webUpdateNoticePlugin(), htmlPlugin())
   } else {
     vitePlugins.push(
       inspect(),
