@@ -25,6 +25,15 @@ module.exports = defineConfig({
     'plugin:prettier/recommended',
     './.eslintrc-auto-import.json'
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']]
+      }
+    },
+    // 允许的扩展名
+    'import/extensions': ['.js', '.jsx', '.ts', 'tsx', '.mjs']
+  },
   rules: {
     'import/no-extraneous-dependencies': 0, // 禁止使用多余的包
     'import/extensions': 0, // 确保在导入路径内一致使用文件扩展名
@@ -59,7 +68,7 @@ module.exports = defineConfig({
     'no-delete-var': 'off', // 允许 delete 变量
     'array-bracket-spacing': 'error', // 强制数组方括号中使用一致的空格
     'brace-style': 'error', // 强制在代码块中使用一致的大括号风格
-    // camelcase: 'error', // 强制使用骆驼拼写法命名约定
+    camelcase: 'error', // 强制使用骆驼拼写法命名约定
     indent: 'off', // 强制使用一致的缩进
     'max-nested-callbacks': ['error', 3], // 强制回调函数最大嵌套深度
     'max-params': ['error', 3], // 强制函数定义中最多允许的参数数量
