@@ -13,4 +13,4 @@ dist
 /bin
 /src/mock
 Dockerfile
-commitlint.config.js
+yarn.lock

@@ -12,9 +12,7 @@ pnpm-lock.yaml
 *.png
 *.ico
 *ignore
-
-## Local
-.husky
+**/*.sh
 
 ## Built-files
 .cache
