@@ -49,7 +49,7 @@ module.exports = defineConfig({
     'no-return-assign': 'error', // 禁止在return语句中使用赋值语句
     'no-inner-declarations': 'error', // 禁止在嵌套的块中出现变量声明或 function 声明
     'vue/multi-word-component-names': 0, // 要求组件名称总是多个单词
-    'no-debugger': 'error',
+    'no-debugger': 'error', // 禁用 debugger
     'no-duplicate-case': 'error', // 禁止出现重复的 case 标签
     'no-extra-parens': 'off', // 禁止不必要的括号
     'no-func-assign': 'error', // 禁止对 function 声明重新赋值
@@ -85,13 +85,13 @@ module.exports = defineConfig({
     'switch-colon-spacing': 'error', // 强制在 switch 的冒号左右有空格
     'arrow-spacing': 'error', // 强制箭头函数的箭头前后使用一致的空格
     'no-var': 'error', // 禁止使用 var
-    'prefer-const': 'error',
-    'prefer-rest-params': 'error',
-    'no-useless-escape': 'error',
+    'prefer-const': 'error', // 要求使用 const 声明那些声明后不再被修改的变量
+    'prefer-rest-params': 'error', // 要求使用剩余参数而不是 arguments
+    'no-useless-escape': 'error', // 禁用不必要的转义字符
     'no-prototype-builtins': 'error', // 禁止直接使用 Object.prototypes 的内置属性
-    'no-fallthrough': 'error',
-    'no-extra-boolean-cast': 'error',
-    'no-case-declarations': 'error',
+    'no-fallthrough': 'error', // 禁止 case 语句落空
+    'no-extra-boolean-cast': 'error', // 禁止不必要的布尔转换
+    'no-case-declarations': 'error', // 不允许在 case 子句中使用词法声明
     'no-async-promise-executor': 'error' // 禁止使用异步函数作为 Promise executor
   }
 })
