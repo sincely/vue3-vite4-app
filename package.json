@@ -12,7 +12,6 @@
     "prettier:fix": "prettier --write \"src/**/*.{js,vue}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less}\" --fix",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint --config commitlint.config.js -e -V",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -52,7 +51,6 @@
     "@vueuse/components": "10.5.0",
     "@vueuse/core": "10.5.0",
     "autoprefixer": "10.4.14",
-    "conventional-changelog-cli": "3.0.0",
     "eslint": "8.45.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-define-config": "1.21.0",
