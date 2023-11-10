@@ -2,7 +2,7 @@
 import ViteImages from 'vite-plugin-vue-images'
 export default function imagesPlugin() {
   return ViteImages({
-    dirs: ['src/assets/image'], // 指明图片存放目录
+    dirs: ['src/assets/images'], // 指明图片存放目录
     // valid image extensions
     extensions: ['jpg', 'jpeg', 'png', 'svg', 'webp'],
     // Override default behavior of name -> image path resolution
