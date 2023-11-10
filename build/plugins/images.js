@@ -3,11 +3,8 @@ import ViteImages from 'vite-plugin-vue-images'
 export default function imagesPlugin() {
   return ViteImages({
     dirs: ['src/assets/images'], // 指明图片存放目录
-    // valid image extensions
-    extensions: ['jpg', 'jpeg', 'png', 'svg', 'webp'],
-    // Override default behavior of name -> image path resolution
-    customResolvers: [],
-    // Override Regex that searches for variables to replace. MUST include group
-    customSearchRegex: '([a-zA-Z0-9]+)'
+    extensions: ['jpg', 'jpeg', 'png', 'svg', 'webp'], // 指明图片格式
+    customResolvers: [], // 自定义解析器
+    customSearchRegex: '([a-zA-Z0-9]+)' // 自定义正则
   })
 }

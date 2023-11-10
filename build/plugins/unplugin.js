@@ -25,9 +25,8 @@ export default function createVitePlugins() {
     Components({
       dirs: ['src/components'], // 指定组件位置，默认是src/components
       resolvers: [AntDesignVueResolver({ importStyle: 'less', resolveIcons: true }), IconsResolver()],
-      extensions: ['vue'],
-      // 配置文件生成位置
-      dts: false // 会在根目录生成./components.d.ts，里面可以看到自动导入的api
+      extensions: ['vue'], // 指定扩展名，默认是.vue
+      dts: false // 配置文件生成位置,会在根目录生成./components.d.ts，里面可以看到自动导入的api
     })
   ]
 }
