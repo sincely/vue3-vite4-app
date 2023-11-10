@@ -1,7 +1,6 @@
 import vue from '@vitejs/plugin-vue'
 import unplugin from './unplugin'
 import mock from './mock'
-import visualizer from './visualizer'
 import compression from './compression'
 import inspect from './inspect'
 import legacy from './legacy'
@@ -21,7 +20,7 @@ import htmlPlugin from './html'
 export default function createVitePlugins(viteEnv, isBuild = false) {
   const vitePlugins = [vue(), mock(viteEnv), ...unplugin(), commonjs(), restartPlugin(), imagesPlugin()]
   if (isBuild) {
-    vitePlugins.push(compression(), visualizer(), legacy(), progress(), webUpdateNoticePlugin(), htmlPlugin())
+    vitePlugins.push(compression(), legacy(), progress(), webUpdateNoticePlugin(), htmlPlugin())
   } else {
     vitePlugins.push(
       inspect(),
