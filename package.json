@@ -9,7 +9,7 @@
     "preview": "vite preview --port 4173",
     "eslint:fix": "eslint \"src/**/*.{vue,js,jsx}\" --fix",
     "lint:fix": "eslint \"src/**/*.{vue,js,jsx}\" --fix",
-    "prettier:fix": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}",
+    "prettier:fix": "prettier --write \"src/**/*.{js,vue,less,css,json,html}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less}\" --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
