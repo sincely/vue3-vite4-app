@@ -23,7 +23,6 @@ export default defineConfig(({ mode, command }) => {
           drop_debugger: true // 生产环境时移除debugger
         }
       },
-      assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求。设置为0可以完全禁用此项
       modulePreload: true, // 是否动态引入polyfill，需要引入兼容性相关的文件
       emptyOutDir: true, // 默认true默认情况下，若outDir在root目录下，则Vite会在构建时清空该目录。
       assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求。设置为0可以完全禁用此项
