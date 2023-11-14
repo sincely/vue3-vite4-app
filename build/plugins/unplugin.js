@@ -3,6 +3,7 @@ import Components from 'unplugin-vue-components/vite' // 自动导入
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 export default function createVitePlugins() {
   return [
     Icons({ autoInstall: true, compiler: 'vue3' }),
@@ -12,7 +13,7 @@ export default function createVitePlugins() {
       // 可以选择auto-import.d.ts生成的位置，使用ts建议设置为'src/auto-import.d.ts'
       dts: false, // 会在根目录生成auto-imports.d.ts，里面可以看到自动导入的api
       // 解析器配置
-      resolvers: [], // 第三方ui
+      resolvers: [ElementPlusResolver()], // 第三方ui
       // 根据项目情况配置eslintrc，默认是不开启的
       // 下面两个是其他配置，默认即可
       // 输出一份json文件，默认输出路径为./.eslintrc-auto-import.json
@@ -27,6 +28,17 @@ export default function createVitePlugins() {
       resolvers: [ElementPlusResolver(), IconsResolver()],
       extensions: ['vue'], // 指定扩展名，默认是.vue
       dts: false // 配置文件生成位置,会在根目录生成./components.d.ts，里面可以看到自动导入的api
+    }),
+    // 自动导入element-plus样式，不配置的话，会出现ElMessage样式不生效问题
+    createStyleImportPlugin({
+      resolves: [ElementPlusResolve()],
+      libs: [
+        {
+          libraryName: 'element-plus',
+          esModule: true,
+          resolveStyle: (name) => `element-plus/theme-chalk/${name}.css`
+        }
+      ]
     })
   ]
 }

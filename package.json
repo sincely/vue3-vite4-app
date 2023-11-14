@@ -78,6 +78,7 @@
     "stylelint-less": "1.0.8",
     "stylelint-order": "6.0.3",
     "vite": "4.5.0",
+    "vite-plugin-style-import": "2.0.0",
     "vite-plugin-restart": "0.3.1",
     "vite-plugin-vue-devtools": "0.5.1",
     "vite-plugin-vue-images": "0.6.1",
