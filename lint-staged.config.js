@@ -4,6 +4,6 @@ module.exports = {
   '*.{js,jsx,ts,tsx,vue}': ['eslint --fix', 'prettier --write'],
   '*.vue': ['eslint --fix', 'prettier --write', 'stylelint:fix'],
   'package.json': ['prettier --write'],
-  '*.{css,less,}': ['stylelint:fix', 'prettier --write'],
+  '*.{css,less,scss}': ['stylelint:fix', 'prettier --write'],
   '{!(package)*.json,.!(browserslist)*rc}': ['prettier --write--parser json']
 }
