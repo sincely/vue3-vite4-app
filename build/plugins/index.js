@@ -1,17 +1,17 @@
 import vue from '@vitejs/plugin-vue'
-import unplugin from './unplugin'
-import mock from './mock'
-import compression from './compression'
-import inspect from './inspect'
-import legacy from './legacy'
-import commonjs from './require'
-import progress from './progress'
-import vueDevTools from './vueDevtool'
-import prefetchPlugin from './preload'
-import webUpdateNoticePlugin from './updateVersion'
-import restartPlugin from './restart'
-import imagesPlugin from './images'
-import htmlPlugin from './html'
+import unplugin from './unplugin' // unplugin自动导入
+import mock from './mock' // mock
+import compression from './compression' // 资源压缩
+import inspect from './inspect' // vue插件检查页面
+import legacy from './legacy' // 浏览器兼容
+import commonjs from './require' // require模块
+import progress from './progress' // 页面进度条
+import vueDevTools from './vueDevtool' // vue开发工具
+import prefetchPlugin from './preload' // 预加载
+import webUpdateNoticePlugin from './updateVersion' // 版本更新
+import restartPlugin from './restart' // 重启服务
+import imagesPlugin from './images' // 图片
+import htmlPlugin from './html' // html插件
 /**
  * @description  创建vite插件
  * @param viteEnv - 环境变量配置

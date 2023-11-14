@@ -2,10 +2,12 @@ import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
 import createVitePlugins from './build/plugins'
 import { proxyServer } from './build/config/proxy'
+
 export default defineConfig(({ mode, command }) => {
   const viteEnv = loadEnv(mode, process.cwd())
   return defineConfig({
     base: viteEnv.VITE_BASE_URL,
+    publicDir: 'public', // 指定静态资源存放的文件夹
     server: {
       https: false, // 是否开启https
       strictPort: false, // 设为false时，若端口已被占用则会尝试下一个可用端口,而不是直接退出
@@ -21,12 +23,13 @@ export default defineConfig(({ mode, command }) => {
           drop_debugger: true // 生产环境时移除debugger
         }
       },
+      modulePreload: true, // 是否动态引入polyfill，需要引入兼容性相关的文件
       emptyOutDir: true, // 默认true默认情况下，若outDir在root目录下，则Vite会在构建时清空该目录。
       assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求。设置为0可以完全禁用此项
       outDir: 'dist', // 指定输出路径,默认dist
       reportCompressedSize: false, // 取消计算文件大小，加快打包速度
-      sourcemap: true,
-      assetsDir: 'assets', // 默认assets
+      sourcemap: true, // 构建后是否生成 source map 文件
+      assetsDir: 'assets', // 静态资源的存放目录
       cssCodeSplit: true, // 启用/禁用CSS代码拆分默认true, 用则所有样式保存在一个css里面
       brotliSize: true, // 启用/禁用brotliSize压缩大小报告
       chunkSizeWarningLimit: 1500, // chunk大小警告的限制
@@ -72,6 +75,10 @@ export default defineConfig(({ mode, command }) => {
           javascriptEnabled: true
         }
       }
+    },
+    json: {
+      namedExports: true, // 是否支持从.json文件中进行按名导入
+      stringify: false // 导入的json转换为export default JSON.parse("...")
     },
     plugins: createVitePlugins(viteEnv, command === 'build'),
     // 强制预构建插件包

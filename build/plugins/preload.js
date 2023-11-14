@@ -8,8 +8,9 @@ function getFiles(e) {
   const arr = []
   const dirents = fs.readdirSync(e, { withFileTypes: true })
   for (const dirent of dirents) {
-    if (dirent.isDirectory()) arr.push(...getFiles(e + dirent.name + '/'))
-    else {
+    if (dirent.isDirectory()) {
+      arr.push(...getFiles(e + dirent.name + '/'))
+    } else {
       arr.push(e + dirent.name)
     }
   }
@@ -25,11 +26,8 @@ function getFiles(e) {
  */
 export default function prefetchPlugin(options = { pathList: [], preFix: '' }) {
   if (options.pathList && options.pathList.length) {
-    let res = []
-    options.pathList.forEach((path) => {
-      res = res.concat(getFiles(path))
-    })
-    let linkStr = `
+    const res = options.pathList.map(getFiles).flat()
+    const linkStr = `
         <script>
         setTimeout(() => {
             function preLoadSource(url){
@@ -44,11 +42,9 @@ export default function prefetchPlugin(options = { pathList: [], preFix: '' }) {
                 };
                 xhr.send();
             }\n
-        `
-    res.forEach((item) => {
-      linkStr += `preLoadSource('${options.preFix + item.substring(1)}')\n`
-    })
-    linkStr += '})\n</script>'
+        ${res.map((item) => `preLoadSource('${options.preFix + item.substring(1)}')\n`).join('')}
+        })\n</script>
+    `
     return {
       name: 'preload-file',
       transformIndexHtml(dom) {
