@@ -10,8 +10,8 @@
 # 测试和打包目录
 /test/
 /dist/*
-/public/*
 public/*
 /node_modules/
 nginx/*
-assets/*
+/src/assets/*
+.husky

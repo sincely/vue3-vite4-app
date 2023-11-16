@@ -93,5 +93,11 @@ module.exports = defineConfig({
     'no-extra-boolean-cast': 'error', // 禁止不必要的布尔转换
     'no-case-declarations': 'error', // 不允许在 case 子句中使用词法声明
     'no-async-promise-executor': 'error' // 禁止使用异步函数作为 Promise executor
+  },
+  globals: {
+    defineEmits: true,
+    defineProps: true,
+    defineExpose: true,
+    withDefaults: true
   }
 })
