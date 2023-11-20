@@ -4,11 +4,11 @@
   </div>
 </template>
 <script setup>
-import DevicePixelRatio from '@/utils/devicePixelRatio.js'
+// import DevicePixelRatio from '@/utils/devicePixelRatio.js'
 
-onMounted(() => {
-  new DevicePixelRatio().init()
-})
+// onMounted(() => {
+//   new DevicePixelRatio().init()
+// })
 </script>
 
 <style scoped></style>
