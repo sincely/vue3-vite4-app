@@ -4,14 +4,29 @@
 
 # 其他类型文件
 *.js
+*.json
+*.md
+*.lock
+*.log
+*.txt
+*.yml
+*.tsx
+*.ts
+*.json
+*.yaml
+*.html
 *.jpg
+*.png
+*.eot
+*.ttf
 *.woff
 
 # 测试和打包目录
 /test/
-/dist/*
+dist/*
 public/*
 /node_modules/
 nginx/*
-/src/assets/*
+src/assets/*
 .husky
+.env
