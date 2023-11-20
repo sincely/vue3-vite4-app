@@ -3,12 +3,6 @@
     <router-view />
   </div>
 </template>
-<script setup>
-// import DevicePixelRatio from '@/utils/devicePixelRatio.js'
-
-// onMounted(() => {
-//   new DevicePixelRatio().init()
-// })
-</script>
+<script setup></script>
 
 <style scoped></style>
