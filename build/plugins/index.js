@@ -10,7 +10,6 @@ import vueDevTools from './vueDevtool' // vue开发工具
 import prefetchPlugin from './preload' // 预加载
 import webUpdateNoticePlugin from './updateVersion' // 版本更新
 import restartPlugin from './restart' // 重启服务
-import imagesPlugin from './images' // 图片
 import htmlPlugin from './html' // html插件
 /**
  * @description  创建vite插件
@@ -18,7 +17,7 @@ import htmlPlugin from './html' // html插件
  * @param isBuild - 是否编译
  */
 export default function createVitePlugins(viteEnv, isBuild = false) {
-  const vitePlugins = [vue(), mock(viteEnv), ...unplugin(), commonjs(), restartPlugin(), imagesPlugin()]
+  const vitePlugins = [vue(), mock(viteEnv), ...unplugin(), commonjs(), restartPlugin()]
   if (isBuild) {
     vitePlugins.push(compression(), legacy(), progress(), webUpdateNoticePlugin(), htmlPlugin())
   } else {
