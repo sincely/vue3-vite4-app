@@ -28,5 +28,6 @@ public/*
 /node_modules/
 nginx/*
 src/assets/*
+src/icons/*
 .husky
 .env
