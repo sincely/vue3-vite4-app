@@ -12,7 +12,9 @@ dist
 .local
 /bin
 /src/mock
+/src/assets
+/src/icons
 Dockerfile
 yarn.lock
-vite.config.js
-assets/*
+package-lock.json
+pnpm-lock.yaml
