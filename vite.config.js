@@ -71,7 +71,7 @@ export default defineConfig(({ mode, command }) => {
       preprocessorOptions: {
         // 指定传递给css预处理器的选项
         less: {
-          additionalData: '@import "./src/styles/variables.less";',
+          additionalData: `@import "./src/styles/variables.less";@import "./src/styles/mixin.less";`,
           javascriptEnabled: true
         }
       }

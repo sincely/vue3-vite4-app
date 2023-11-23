@@ -12,6 +12,7 @@ defineProps({
   <div>
     <a-button>11111111</a-button>
     <a-button type="primary">Primary Button</a-button>
+    <SvgIcon icon-class="decline" />
   </div>
 </template>
 
