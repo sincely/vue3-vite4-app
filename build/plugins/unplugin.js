@@ -3,6 +3,8 @@ import Components from 'unplugin-vue-components/vite' // 自动导入组件,不�
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { createStyleImportPlugin, AndDesignVueResolve } from 'vite-plugin-style-import'
+
 export default function createVitePlugins() {
   return [
     Icons({ autoInstall: true, compiler: 'vue3' }),
@@ -27,6 +29,20 @@ export default function createVitePlugins() {
       resolvers: [AntDesignVueResolver({ importStyle: 'less', resolveIcons: true }), IconsResolver()],
       extensions: ['vue'], // 指定扩展名，默认是.vue
       dts: false // 配置文件生成位置,会在根目录生成./components.d.ts，里面可以看到自动导入的api
+    }),
+    // 当你使用unplugin-vue-components引入ui库的时候 message, notification 等引入样式不生效 安装vite-plugin-style-import即可
+    createStyleImportPlugin({
+      resolves: [AndDesignVueResolve()],
+      // 自定义规则
+      libs: [
+        {
+          libraryName: 'ant-design-vue',
+          esModule: true,
+          resolveStyle: (name) => {
+            return `ant-design-vue/es/${name}/style/index`
+          }
+        }
+      ]
     })
   ]
 }
