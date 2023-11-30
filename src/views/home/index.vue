@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <demo />
 </template>
 
 <script setup></script>
