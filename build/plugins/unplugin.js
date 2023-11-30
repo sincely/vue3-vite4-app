@@ -29,7 +29,7 @@ export default function createVitePlugins() {
       extensions: ['vue'], // 指定扩展名，默认是.vue
       dts: false // 配置文件生成位置,会在根目录生成./components.d.ts，里面可以看到自动导入的api
     }),
-    // 自动导入element-plus样式，不配置的话，会出现ElMessage样式不生效问题
+    // 当你使用unplugin-vue-components引入ui库的时候 message, notification 等引入样式不生效 安装vite-plugin-style-import即可
     createStyleImportPlugin({
       resolves: [ElementPlusResolve()],
       libs: [
