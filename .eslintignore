@@ -1,5 +1,8 @@
 *.sh
 node_modules
+components.d.ts
+auto-imports.d.ts
+prettier.config.js
 *.md
 *.woff
 *.ttf
@@ -18,4 +21,3 @@ Dockerfile
 yarn.lock
 package-lock.json
 pnpm-lock.yaml
-vite.config.js
