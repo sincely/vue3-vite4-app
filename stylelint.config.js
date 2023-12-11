@@ -3,13 +3,19 @@ module.exports = {
   defaultSeverity: 'error',
   plugins: ['stylelint-order', 'stylelint-less'], // CSS 属性顺序规则插件
   extends: [
-    'stylelint-config-standard', // stylelint标准配置
-    'stylelint-config-html/html', // html相关配置
+    'stylelint-config-standard', // stylelint标准配置，普通css，默认
+    'stylelint-config-html/html', // 配置vue中template样式格式化
     'stylelint-config-html/vue', //  vue相关配置
-    'stylelint-config-recess-order', // 对CSS声明进行排序
-    'stylelint-config-prettier' // 关闭Stylelint中与Prettier中会发生冲突的规则
+    'stylelint-config-recess-order', // 配置stylelint css属性书写顺序插件,
+    'stylelint-config-prettier' // 配置stylelint和prettier兼容
   ],
+  /**
+   * null  => 关闭该规则
+   * always => 必须
+   */
   rules: {
+    // 在css中使用v-bind，不报错
+    'value-keyword-case': null,
     // 禁止在覆盖高特异性选择器之后出现低特异性选择器
     'no-descending-specificity': null,
     // 禁止空源码
@@ -48,8 +54,17 @@ module.exports = {
     'selector-class-pattern': null,
     // 不允许值使用供应商前缀
     'value-no-vendor-prefix': null,
+    // 关闭属性前缀 -webkit-mask
+    'property-no-vendor-prefix': null,
     // 要求或禁止在规则之前的空行
-    'rule-empty-line-before': ['always', { ignore: ['after-comment', 'first-nested'] }]
+    'rule-empty-line-before': ['always', { ignore: ['after-comment', 'first-nested'] }],
+    'selector-pseudo-class-no-unknown': [
+      // 不允许未知的选择器
+      true,
+      {
+        ignorePseudoClasses: ['global', 'v-deep', 'deep'] // 忽略属性，修改element默认样式的时候能使用到
+      }
+    ]
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
   overrides: [
