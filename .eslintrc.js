@@ -1,5 +1,4 @@
 const { defineConfig } = require('eslint-define-config')
-
 module.exports = defineConfig({
   root: true,
   env: {
@@ -35,6 +34,8 @@ module.exports = defineConfig({
     'import/extensions': ['.js', '.jsx', '.ts', 'tsx', '.mjs']
   },
   rules: {
+    'no-var': 'error', // 要求使用let或const,而不是 var
+    'no-multiple-empty-lines': ['warn', { max: 1 }], // 不允许多个空行
     'import/no-extraneous-dependencies': 0, // 禁止使用多余的包
     'import/extensions': 0, // 确保在导入路径内一致使用文件扩展名
     'import/no-unresolved': 0, // 确保导入指向可以解析的文件/模块
@@ -57,7 +58,7 @@ module.exports = defineConfig({
     curly: 'error', // 强制所有控制语句使用一致的括号风格
     eqeqeq: 'error', // 要求使用 === 和 !==
     'no-else-return': 'error', // 禁止 if 语句中 return 语句之后有 else 块
-    // 'no-empty-function': 'error', // 禁止出现空函数
+    'no-empty-function': 'error', // 禁止出现空函数
     'no-multi-spaces': 'error', // 禁止使用多个空格
     'no-redeclare': 'error', // 禁止多次声明同一变量
     'no-return-await': 'error', // 禁用不必要的 return await
@@ -75,7 +76,6 @@ module.exports = defineConfig({
     'max-statements-per-line': ['error', { max: 1 }], // 强制每一行中所允许的最大语句数量
     'no-lonely-if': 'error', // 禁止 if 作为唯一的语句出现在 else 语句中
     'no-mixed-spaces-and-tabs': 'error', // 禁止空格和 tab 的混合缩进
-    'no-multiple-empty-lines': 'error', // 禁止出现多行空行
     semi: ['error', 'never'], // 禁止出现;
     'space-before-blocks': 'error', // 强制在块之前使用一致的空格
     'space-in-parens': 'error', // 强制在圆括号内使用一致的空格
@@ -84,7 +84,6 @@ module.exports = defineConfig({
     'spaced-comment': 'error', // 强制在注释中 // 或 /\* 使用一致的空格
     'switch-colon-spacing': 'error', // 强制在 switch 的冒号左右有空格
     'arrow-spacing': 'error', // 强制箭头函数的箭头前后使用一致的空格
-    'no-var': 'error', // 禁止使用 var
     'prefer-const': 'error', // 要求使用 const 声明那些声明后不再被修改的变量
     'prefer-rest-params': 'error', // 要求使用剩余参数而不是 arguments
     'no-useless-escape': 'error', // 禁用不必要的转义字符

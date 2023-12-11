@@ -3,7 +3,6 @@
  *
  * */
 class DevicePixelRatio {
-  constructor() {}
   // 获取系统类型
   getSystem() {
     const agent = navigator.userAgent.toLowerCase()

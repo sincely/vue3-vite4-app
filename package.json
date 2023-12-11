@@ -7,10 +7,10 @@
     "build:test": "vite build --mode test",
     "build:production": "vite build --mode production",
     "preview": "vite preview --port 4173",
-    "eslint:fix": "eslint \"src/**/*.{vue,js,jsx}\" --fix",
-    "lint:fix": "eslint \"src/**/*.{vue,js,jsx}\" --fix",
+    "eslint:fix": "eslint \"src/**/*.{vue,js}\" --fix",
+    "lint:fix": "eslint \"src/**/*.{vue,js}\" --fix",
     "prettier:fix": "prettier --write \"src/**/*.{js,vue,less,css,json,html}\"",
-    "stylelint:fix": "stylelint \"src/**/*.{vue,css,less,scss}\" --fix",
+    "stylelint:fix": "stylelint \"src/**/*.{vue,css,less,css}\" --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
@@ -47,6 +47,9 @@
     "vite-plugin-progress": "0.0.7",
     "vite-plugin-svg-icons": "2.0.1",
     "vite-svg-loader": "4.0.0",
+    "vite-plugin-style-import": "2.0.0",
+    "vite-plugin-restart": "0.4.0",
+    "vite-plugin-vue-devtools": "0.5.1",
     "vue": "3.3.9",
     "vue-router": "4.2.5"
   },
@@ -77,9 +80,6 @@
     "stylelint-less": "2.0.0",
     "stylelint-order": "6.0.4",
     "vite": "4.5.1",
-    "vite-plugin-style-import": "2.0.0",
-    "vite-plugin-restart": "0.4.0",
-    "vite-plugin-vue-devtools": "0.5.1",
     "vue-eslint-parser": "9.3.2"
   }
 }
