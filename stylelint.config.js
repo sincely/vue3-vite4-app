@@ -14,6 +14,7 @@ module.exports = {
    * always => 必须
    */
   rules: {
+    'max-nesting-depth': 2, // 样式最大嵌套层数，总共最多3层
     // 在css中使用v-bind，不报错
     'value-keyword-case': null,
     // 禁止在覆盖高特异性选择器之后出现低特异性选择器
