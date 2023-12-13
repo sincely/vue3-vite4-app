@@ -4,7 +4,7 @@ import router from '@/router' // 路由
 import '@/styles/index.less' // 全局样式
 import 'virtual:svg-icons-register' // svg图标注册
 
-async function start() {
+async function setupApp() {
   const app = createApp(App)
   app.use(store)
   app.use(router)
@@ -12,4 +12,4 @@ async function start() {
   app.config.performance = true
 }
 
-start()
+setupApp()
