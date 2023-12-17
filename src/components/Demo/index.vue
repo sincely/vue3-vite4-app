@@ -31,9 +31,9 @@ const reset = () => {
 
 <template>
   <div>
-    <a-button @click="handleChangeStore1">同步</a-button>
-    <a-button type="primary" @click="handleChangeStore2">异步</a-button>
-    <a-button type="primary" @click="reset">重置</a-button>
+    <button @click="handleChangeStore1">同步</button>
+    <button @click="handleChangeStore2">异步</button>
+    <button @click="reset">重置</button>
     <svg-icon icon-class="logo" />
     <p>count: {{ count }}</p>
     <p>double: {{ double }}</p>
