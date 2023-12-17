@@ -1,7 +1,7 @@
 {
   "name": "vue3-vite4-app",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "scripts": {
     "serve": "npm run eslint:fix && npm run prettier:fix && npm run stylelint:fix && vite --mode development",
     "build:test": "vite build --mode test",
@@ -11,6 +11,9 @@
     "lint:fix": "eslint \"src/**/*.{vue,js}\" --fix",
     "prettier:fix": "prettier --write \"src/**/*.{js,vue,less,css,json,html}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less,css}\" --fix",
+    "bump:patch": "changelogen --bump --output CHANGELOG.md --release --prerelease",
+    "bump:minor": "changelogen --bump --output CHANGELOG.md --release --minor",
+    "bump:major": "changelogen --bump --output CHANGELOG.md --release --major",
     "dir-tree": "esno ./scripts/dir-tree",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
@@ -20,6 +23,7 @@
     "@vueuse/components": "10.6.1",
     "@vueuse/core": "10.6.1",
     "axios": "1.2.1",
+    "changelogen": "0.5.5",
     "terser": "5.24.0",
     "mockjs": "1.1.0",
     "dayjs": "1.11.10",
