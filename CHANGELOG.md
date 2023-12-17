@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://gitlab.com/sincely/vue3-vite4-app/compare/v0.0.2-0...v0.1.0)
+
 ## v0.0.2-0
 
 
