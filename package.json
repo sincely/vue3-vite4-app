@@ -12,6 +12,7 @@
     "prettier:fix": "prettier --write \"src/**/*.{js,vue,less,css,json,html}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less,css}\" --fix",
     "dir-tree": "esno ./scripts/dir-tree",
+    "gen:uno": "esno ./scripts/gen-unocss",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
