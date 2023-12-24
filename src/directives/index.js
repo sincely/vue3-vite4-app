@@ -1,1 +1,4 @@
-console.log(111111111)
+import setupPermissionDirective from './permission'
+export function setupDirectives(app) {
+  setupPermissionDirective(app)
+}
