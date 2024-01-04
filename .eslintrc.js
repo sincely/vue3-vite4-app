@@ -69,7 +69,6 @@ module.exports = defineConfig({
     'no-delete-var': 'off', // 允许 delete 变量
     'array-bracket-spacing': 'error', // 强制数组方括号中使用一致的空格
     'brace-style': 'error', // 强制在代码块中使用一致的大括号风格
-    camelcase: 'error', // 强制使用骆驼拼写法命名约定
     indent: 'off', // 强制使用一致的缩进
     'max-nested-callbacks': ['error', 3], // 强制回调函数最大嵌套深度
     'max-params': ['error', 3], // 强制函数定义中最多允许的参数数量
@@ -91,7 +90,8 @@ module.exports = defineConfig({
     'no-fallthrough': 'error', // 禁止 case 语句落空
     'no-extra-boolean-cast': 'error', // 禁止不必要的布尔转换
     'no-case-declarations': 'error', // 不允许在 case 子句中使用词法声明
-    'no-async-promise-executor': 'error' // 禁止使用异步函数作为 Promise executor
+    'no-async-promise-executor': 'error', // 禁止使用异步函数作为 Promise executor
+    'no-unsafe-optional-chaining': 'error' //  禁止链式写法 a?.b?.c
   },
   globals: {
     defineEmits: true,
