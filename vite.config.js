@@ -65,7 +65,7 @@ export default defineConfig(({ mode, command }) => {
       // 导入时想要省略的扩展名列表
       // 不建议使用.vue 影响IDE和类型支持
       // 在Vite中,不建议(实测还是可以配置的)忽略自定义扩展名，因为会影响IDE和类型支持。因此需要完整书写
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', 'vue'] // 默认支持
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'] // 默认支持
     },
     css: {
       preprocessorOptions: {
