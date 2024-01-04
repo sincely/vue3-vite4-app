@@ -90,7 +90,8 @@ module.exports = defineConfig({
     'no-fallthrough': 'error', // 禁止 case 语句落空
     'no-extra-boolean-cast': 'error', // 禁止不必要的布尔转换
     'no-case-declarations': 'error', // 不允许在 case 子句中使用词法声明
-    'no-async-promise-executor': 'error' // 禁止使用异步函数作为 Promise executor
+    'no-async-promise-executor': 'error', // 禁止使用异步函数作为 Promise executor
+    'no-unsafe-optional-chaining': 'error' //  禁止链式写法 a?.b?.c
   },
   globals: {
     defineEmits: true,
