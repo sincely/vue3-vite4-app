@@ -6,8 +6,7 @@ module.exports = {
     'stylelint-config-standard', // stylelint标准配置，普通css，默认
     'stylelint-config-html/html', // 配置vue中template样式格式化
     'stylelint-config-html/vue', //  vue相关配置
-    'stylelint-config-recess-order', // 配置stylelint css属性书写顺序插件,
-    'stylelint-config-prettier' // 配置stylelint和prettier兼容
+    'stylelint-config-recess-order' // 配置stylelint css属性书写顺序插件,
   ],
   /**
    * null  => 关闭该规则
