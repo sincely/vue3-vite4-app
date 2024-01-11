@@ -8,7 +8,6 @@
     "build:production": "vite build --mode production",
     "preview": "vite preview --port 4173",
     "eslint:fix": "eslint \"src/**/*.{vue,js}\" --fix",
-    "lint:fix": "eslint \"src/**/*.{vue,js}\" --fix",
     "prettier:fix": "prettier --write \"src/**/*.{js,vue,less,css,json,html}\"",
     "stylelint:fix": "stylelint \"src/**/*.{vue,css,less,css}\" --fix",
     "bump:patch": "changelogen --bump --output CHANGELOG.md --release --prerelease",
