@@ -81,6 +81,7 @@ module.exports = {
     {
       files: ['*.less', '**/*.less'],
       customSyntax: 'postcss-less',
+      extends: ['stylelint-config-standard-less'],
       rules: {
         'less/color-no-invalid-hex': true,
         'less/no-duplicate-variables': true
