@@ -41,7 +41,7 @@
     "vite-plugin-svg-icons": "2.0.1",
     "vite-svg-loader": "4.0.0",
     "vite-plugin-restart": "0.4.0",
-    "vite-plugin-vue-devtools": "0.5.1",
+    "vite-plugin-vue-devtools": "7.0.10",
     "vue": "3.3.9",
     "vue-router": "4.2.5"
   },
