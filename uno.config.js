@@ -18,8 +18,11 @@ export default defineConfig({
   exclude: ['node_modules', 'dist', '.git', '.husky', '.vscode', 'public', 'build', 'mock', './stats.html'],
   presets: [
     // 默认预设（现在相当于@unocss/preset-wind）
+    // m-10 理解为 margin:10rem 或者 m-10px 理解为 margin:10px
     presetUno(),
     // 为其他预设和规则提供属性模式
+    // 归因模式 bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600" 背景颜色的简写
+    // 也可以再元素上不加class 直接写属样式 例如 < div m - 2 p - 10 bg-000 ></div >
     presetAttributify(),
     presetChinese(),
     presetEase(),
@@ -29,7 +32,7 @@ export default defineConfig({
       warn: true,
       extraProperties: { display: 'inline-block', 'vertical-align': 'middle' }
     }),
-    // 排版预设
+    // 排版预设 详细排版看https://unocss.dev/presets/typography#colors 使用这个前两个必须
     presetTypography(),
     // 使用任何Web字体作为类实用程序
     presetWebFonts({
@@ -39,8 +42,11 @@ export default defineConfig({
         mono: 'DM Mono'
       }
     }),
+    // 这里看个人需求是否要使用px，默认unocss默认是rem 转换成 px单位
     presetRemToPx({
-      baseFontSize: 16 // 将rem转换为px（ 1rem = n px ）的基本字体大小。
+      // 将rem转换为px（ 1rem = n px ）的基本字体大小。
+      // 基准字体大小  官方的默认预设（1单位 = 0.25rem） html的字体是16  所以这里为4
+      baseFontSize: 16
     })
   ],
   transformers: [transformerAttributifyJsx(), transformerDirectives(), transformerVariantGroup()],
