@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   defaultSeverity: 'error',
-  plugins: ['stylelint-order', 'stylelint-less'], // CSS 属性顺序规则插件
+  plugins: ['stylelint-order', 'stylelint-scss'], // CSS 属性顺序规则插件
   extends: [
     'stylelint-config-standard', // stylelint标准配置，普通css，默认
     'stylelint-config-html/html', // 配置vue中template样式格式化
@@ -50,7 +50,7 @@ module.exports = {
     'selector-no-vendor-prefix': null,
     // 指定关键帧名称的模式
     'keyframes-name-pattern': null,
-    // 指定类选择器的模式
+    // 关闭强制选择器类名的格式
     'selector-class-pattern': null,
     // 不允许值使用供应商前缀
     'value-no-vendor-prefix': null,
@@ -64,13 +64,25 @@ module.exports = {
       {
         ignorePseudoClasses: ['global', 'v-deep', 'deep'] // 忽略属性，修改element默认样式的时候能使用到
       }
-    ]
+    ],
+    'function-url-quotes': 'never' // 要求或禁止 URL 的引号 "always(必须加上引号)"|"never(没有引号)"
   },
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
+  ignoreFiles: [
+    '**/*.js',
+    '**/*.jsx',
+    '**/*.tsx',
+    '**/*.ts',
+    '**/*.json',
+    '**/*.md',
+    '**/*.yaml',
+    '**/*.{png,jpg,jpeg,gif,bmp,swf,svg,ico}',
+    '**/*.{ttf,woff,eot}',
+    '**/*.{yml,json}'
+  ],
   overrides: [
     {
       files: ['*.vue', '**/*.vue', '*.html', '**/*.html'],
-      customSyntax: 'postcss-html',
+      customSyntax: 'postcss-html', // 支持 HTML 包括 Vue SFC
       rules: {
         // 禁止未知的伪类选择器
         'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['deep', 'global'] }],
@@ -79,13 +91,9 @@ module.exports = {
       }
     },
     {
-      files: ['*.less', '**/*.less'],
-      customSyntax: 'postcss-less',
-      extends: ['stylelint-config-standard-less'],
-      rules: {
-        'less/color-no-invalid-hex': true,
-        'less/no-duplicate-variables': true
-      }
+      files: ['*.scss', '**/*.scss'],
+      customSyntax: 'postcss-scss',
+      extends: ['stylelint-config-standard-scss']
     }
   ]
 }
