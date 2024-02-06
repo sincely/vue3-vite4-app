@@ -40,7 +40,7 @@
     "vite-plugin-svg-icons": "2.0.1",
     "vite-svg-loader": "4.0.0",
     "vite-plugin-restart": "0.4.0",
-    "vite-plugin-vue-devtools": "7.0.10",
+    "vite-plugin-vue-devtools": "7.0.14",
     "vite-plugin-style-import": "2.0.0",
     "vue": "3.3.13",
     "vue-router": "4.2.5"
