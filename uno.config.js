@@ -34,8 +34,9 @@ export default defineConfig({
     }),
     // 排版预设 详细排版看https://unocss.dev/presets/typography#colors 使用这个前两个必须
     presetTypography(),
-    // 使用任何Web字体作为类实用程序
+    // 使用任何Web字体作为类实用程序 网络字体预设：https://unocss.dev/presets/web-fonts
     presetWebFonts({
+      // https://unocss.dev/presets/web-fonts#example
       fonts: {
         sans: 'DM Sans',
         serif: 'DM Serif Display',
@@ -52,6 +53,7 @@ export default defineConfig({
   transformers: [transformerAttributifyJsx(), transformerDirectives(), transformerVariantGroup()],
   shortcuts: {
     // 这里可以放全局公共样式
+    'm-0-auto': 'm-0 ma', // margin: 0 auto
     'wh-full': 'w-full h-full',
     'flex-center': 'flex justify-center items-center',
     'flex-col-center': 'flex-center flex-col',
