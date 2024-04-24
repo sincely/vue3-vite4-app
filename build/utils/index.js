@@ -1,5 +1,13 @@
 import path from 'path'
 
+export function isDevFn(mode) {
+  return mode === 'development'
+}
+
+export function isProdFn(mode) {
+  return mode === 'production'
+}
+
 /**
  * 获取项目根路径
  * @descrition 末尾不带斜杠
