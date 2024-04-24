@@ -70,7 +70,7 @@ module.exports = {
     'brace-style': 'error', // 强制在代码块中使用一致的大括号风格
     indent: 'off', // 强制使用一致的缩进
     'max-nested-callbacks': ['error', 3], // 强制回调函数最大嵌套深度
-    'max-params': ['error', 3], // 强制函数定义中最多允许的参数数量
+    'max-params': ['error', 4], // 强制函数定义中最多允许的参数数量
     'max-statements-per-line': ['error', { max: 1 }], // 强制每一行中所允许的最大语句数量
     'no-lonely-if': 'error', // 禁止 if 作为唯一的语句出现在 else 语句中
     'no-mixed-spaces-and-tabs': 'error', // 禁止空格和 tab 的混合缩进
