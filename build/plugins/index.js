@@ -10,6 +10,7 @@ import prefetchPlugin from './preload' // 预加载
 import restartPlugin from './restart' // 重启服务
 import htmlPlugin from './html' // html插件
 import svgIconPlugin from './svgIcon' // svg图标集成
+import visualizer from './visualizer' // 可视化分析
 /**
  * @description  创建vite插件
  * @param viteEnv - 环境变量配置
@@ -18,7 +19,7 @@ import svgIconPlugin from './svgIcon' // svg图标集成
 export default function createVitePlugins(viteEnv, isBuild = false) {
   const vitePlugins = [vue(), mock(viteEnv), ...unplugin(), restartPlugin(), svgIconPlugin()]
   if (isBuild) {
-    vitePlugins.push(compression(), legacy(), progress(), htmlPlugin())
+    vitePlugins.push(compression(), legacy(), progress(), htmlPlugin(), visualizer(viteEnv))
   } else {
     vitePlugins.push(
       inspect(),
