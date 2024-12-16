@@ -27,9 +27,13 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
+status.html
+
 
 # IDE
 .idea
 
 auto-imports.d.ts
 components.d.ts
+
+status.html
