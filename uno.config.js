@@ -15,7 +15,11 @@ import presetEase from 'unocss-preset-ease'
 import antdUnoTheme from './themes/antd-uno-theme.json'
 
 export default defineConfig({
-  exclude: ['node_modules', 'dist', '.git', '.husky', '.vscode', 'public', 'build', 'mock', './stats.html'],
+  content: {
+    pipeline: {
+      exclude: ['node_modules', 'dist', '.git', '.husky', '.vscode', 'public', 'build', 'mock', './stats.html']
+    }
+  },
   presets: [
     // 默认预设（现在相当于@unocss/preset-wind）
     // m-10 理解为 margin:10rem 或者 m-10px 理解为 margin:10px

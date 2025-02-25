@@ -33,7 +33,7 @@ const reset = () => {
   <div>
     <a-button @click="handleChangeStore1">同步</a-button>
     <a-button type="primary" @click="handleChangeStore2">异步</a-button>
-    <a-button type="primary" @click="reset">重置</a-button>
+    <a-button type="primary" class="mb-3" @click="reset">重置</a-button>
     <svg-icon icon-class="logo" />
     <p>count: {{ count }}</p>
     <p>double: {{ double }}</p>
