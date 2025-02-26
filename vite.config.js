@@ -5,6 +5,7 @@ import { proxyServer } from './build/config/proxy'
 
 export default defineConfig(({ mode, command }) => {
   const viteEnv = loadEnv(mode, process.cwd())
+  const isProduction = viteEnv.VITE_ENV === 'production'
   return defineConfig({
     base: viteEnv.VITE_BASE_URL,
     publicDir: 'public', // 指定静态资源存放的文件夹
@@ -28,7 +29,7 @@ export default defineConfig(({ mode, command }) => {
       assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求。设置为0可以完全禁用此项
       outDir: 'dist', // 指定输出路径,默认dist
       reportCompressedSize: false, // 取消计算文件大小，加快打包速度
-      sourcemap: true, // 构建后是否生成 source map 文件
+      sourcemap: !isProduction, // 构建后是否生成 source map 文件
       assetsDir: 'assets', // 静态资源的存放目录
       cssCodeSplit: true, // 启用/禁用CSS代码拆分默认true, 用则所有样式保存在一个css里面
       brotliSize: true, // 启用/禁用brotliSize压缩大小报告
@@ -39,15 +40,26 @@ export default defineConfig(({ mode, command }) => {
       // 自定义底层的Rollup 打包配置
       rollupOptions: {
         output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              return id.toString().split('node_modules/')[1].split('/')[0].toString()
+          // 指定 chunks 的入口文件模式
+          entryFileNames: 'static/js/[name]-[hash].js',
+          // 对代码分割中产生的 chunk 自定义命名
+          chunkFileNames: 'static/js/[name]-[hash].js',
+          // 自定义构建结果中的静态资源名称
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name.endsWith('.css')) {
+              return 'css/[name]-[hash].css'
             }
+            const imgExts = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif', '.icon']
+            if (imgExts.some((ext) => assetInfo.name.endsWith(ext))) {
+              return 'imgs/[name]-[hash][ext]'
+            }
+            return 'assets/[name]-[hash].[ext]'
           },
-          chunkFileNames: (chunkInfo) => {
-            const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/') : []
-            const fileName = facadeModuleId[facadeModuleId.length - 2] || '[name]'
-            return `js/${fileName}/[name].[hash].js`
+          // 压缩 Rollup 产生的额外代码
+          compact: true,
+          // 自定义 chunk
+          manualChunks: {
+            vue: ['vue', 'vue-router', 'pinia']
           }
         }
       }

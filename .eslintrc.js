@@ -23,15 +23,6 @@ module.exports = {
     'plugin:prettier/recommended',
     './.eslintrc-auto-import.json'
   ],
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [['@', './src']]
-      }
-    },
-    // 允许的扩展名
-    'import/extensions': ['.js', '.jsx', '.ts', 'tsx', '.mjs']
-  },
   rules: {
     'no-var': 'error', // 要求使用let或const,而不是 var
     'no-multiple-empty-lines': ['warn', { max: 1 }], // 不允许多个空行
